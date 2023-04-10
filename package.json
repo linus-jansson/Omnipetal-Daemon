@@ -4,7 +4,7 @@
     "description": "Daemon for Omnipetal Minecraft Server Manager",
     "main": "./src/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "nodemon . -i src/web/"
     },
     "repository": {
         "type": "git",
@@ -27,5 +27,8 @@
         "express": "^4.17.3",
         "extract-zip": "^2.0.1",
         "systeminformation": "^5.11.16"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
     }
 }
