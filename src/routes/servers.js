@@ -53,10 +53,25 @@ router.put('/start-server', (req, res) => {
     res.status(200).json({ status: 'success', note: "not implemented" });
 });
 
+router.put('/stop-server', (req, res) => {
+
+});
+
+router.put('/restart-server', (req, res) => {
+
+});
+
 router.get('/server-info', (req, res) => {
     // reatrive players online
     // amount of system performance used
     const { serverId } = req.query.serverId;
+});
+
+router.put('/execute-command', (req, res) => {
+    const { serverId, command } = req.body;
+
+    // execute command on server
+    
 });
 
 module.exports = router;

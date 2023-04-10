@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 // https://github.com/itzg/docker-minecraft-server
-export default function startServer(tag, path, customServerProps, ) {
+export function startServer(tag, path, customServerProps, ) {
     let serverProperties = '';
 
     for (const prop in customServerProps) {
@@ -9,6 +9,7 @@ export default function startServer(tag, path, customServerProps, ) {
         serverProperties += `-e ${prop}=${customServerProps[prop]} `;
     }
 
+    // write below to docker-compose.yml and save it to directory
     const cmd = `docker run 
         -d 
         -it 
@@ -28,4 +29,23 @@ export default function startServer(tag, path, customServerProps, ) {
         });
 
     return did_start;
+}
+
+export async function execute(tag, cmd ) {
+    const command = `docker exec ${tag} "${cmd}"`;
+
+    return new Promise((resolve, reject) => {
+        resolve(true);
+    });
+}
+
+export function stopServer(tag) {
+    const command = `docker exec ${tag} stop`;
+}
+
+export function restartServer(tag) {
+    const command = `docker exec stop`;
+    execute(tag, command)
+    .then(() => startServer(tag));
+
 }
