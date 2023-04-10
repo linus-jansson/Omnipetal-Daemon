@@ -21,3 +21,9 @@ pm2 start src/index.js
 ## Config
 
 API Config is all located in `./config.json` and you can change API settings there, eg. Port, Auth Key. If you cant find it, run `node .` then it should be created!
+
+
+
+## Roadmap rewrite
+- Docker integration
+  - If not docker is installed on the download docker

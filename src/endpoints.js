@@ -1,5 +1,5 @@
 const config = require("./config.js");
-const serverVersions = require("../serverVersions/versions.js");
+const serverVersions = require("./helpers/versions.js");
 const passkeys = require("./passkeys.js");
 
 module.exports = {
@@ -14,7 +14,6 @@ module.exports = {
     },
 
     // a list of valid software to avoid repeating code
-    validSoftware: ["vanilla"], 
 
     versions: function(app) {
         // API Endpoint to get MC Server Versions
